@@ -1,0 +1,2 @@
+# Real-time-price-discovery-volume-management-at-e-marketplaces
+The Agricultural market cannot just be explained by the simple principle of supply and demand. Rather, it is an interplay of many variables that ideally should be used in the price-discovery of crops. Post-harvest, farmers generally rely on the local prices set at mandis/marketplaces to sell their crops. It has been witnessed that using historical and real-time data, machine learning models could be built to predict real-time prices and also help manage crop volume.   
