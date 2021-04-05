@@ -24,7 +24,18 @@ Modal: Average price of arrived crops on the respective dates ;
 Data related to Market prices collected from the Telangana Govt website for the crops – Groundnut, Bengal gram and Maize.
 Link Courtesy: http://tsmarketing.in/AMCwiseStaffParticulars.aspx
 
-5.1. Data Understanding
+5.1 The Database:
+We have made a connection to MySQL Database in Python such that it can capture the data stored in the database. 
+The steps included were as follows:
+a) Install MySQL connector module
+b) Use the pip command to install MySQL connector Python.
+c) pip install mysql-connector-python
+d) Import MySQL connector module
+e) Import using a import mysql.connector statement so you can use this module’s methods to communicate with the MySQL database.
+f) Use the connect() method of the MySQL Connector class with the required arguments to connect MySQL. It would return a MySQLConnection object if the connection established successfully, Use the cursor() method, Use the cursor() method of a MySQLConnection object to create a cursor object to perform various SQL operations. Use the execute() method,
+The execute() methods run the SQL query and return the result.Extract result using fetchall(), Use cursor.fetchall() or fetchone() or fetchmany() to read query result. Close cursor and connection objects, use cursor.clsoe() and connection.clsoe() method to close open connections after your work completes
+
+6.1. Data Understanding
 The data comprised of the following columns:
 a) Date
 b) AMC – Agricultural Market Name
@@ -34,12 +45,12 @@ e) Maximum Price
 f) Minimum Price
 g) Model Price
 
-6.1 Insights gained from the data:
+7.1 Insights gained from the data:
 (a) The data was available from 2012 to 2021. As 2012 to 2015 there were very few entries and entries were not available for all markets, data from 2016 to 2020 was considered.
 (b) There are a total of 75 Market Names available as below:
 Mahbubnagar , Wanaparthy Town , Warangal , Narsampet , Siddipet , Makthal , Narayanpet, Suryapet , Jammikunta , Atmakur , Gollapalli , Jogipet , Siddipeta , Bhongir , Gadwal , Badepally , Choppadandi , Jangoan , Karimnagar , Mahabubabad , Gajwel , Kesamudram , Kollapur , Nagarkurnool , Thirumalagiri , Nizamabad , Achampet , Pargi , Shadnagar , Khammam , Jagtial , Sadasivpet , Zaheerabad , Vikarabad , Gangadhara , Kamareddy , Kalwakurthy , Tandur , Pitlam , Bicknoor , Ghanpur , Bowenpally , Mallapur , Husnabad , Medipally , Nekkonda , Ibrahimpatnam(JGL) , Marpally , Sardarnagar , Navabpet , Dharur , Gandhari , Wanaparthy Road , Devarakadra , Bhainsa , Pebbair , Vatpally , Korutla , Kulkacherla , Narayankhed , Sarangapur , Nirmal , Khanapur , Adilabad , Bhainsaa , Armoor, Alampur , Shankerpally , Bodhan , Kubeer , Dharmaram , Birkur , Metpally , Dharmapuri , Vantimamidi
 
-7.1 A total of 6 crop types are available in the above markets for Bengal Gram, Maize and Groundnut as mentioned below:
+8.1 A total of 6 crop types are available in the above markets for Bengal Gram, Maize and Groundnut as mentioned below:
 (i) 'Groundnut pods-Common'
 (ii)'Maize-Common'
 (iii)'Bengal Gram-Common',
@@ -50,16 +61,14 @@ Mahbubnagar , Wanaparthy Town , Warangal , Narsampet , Siddipet , Makthal , Nara
 View of the dataset in Tabular form:
 ![image](https://user-images.githubusercontent.com/60257466/113514669-a8cf0900-958d-11eb-87c0-eca25000a544.png)
 
- 
-
-8.1 Data Pre-Processing:
+9.1 Data Pre-Processing:
 (i) NA Values
 The dataset was checked for any NA values. There were totally 28 rows with NA values. As the total number of rows was around 20000, it was decided to remove the rows with NA values as it would not impact the model building.
 (ii) Outliers Treatment
 Box-plots were plotted for the Minimum, Maximum and Model values.
 Outliers were detected in the box plot. There were totally 15 outliers. On analyzing it was observed that these were due to incorrect data entry. So, they were removed from the dataset.
 
-9.1 Exploratory Data Analysis:
+10.1 Exploratory Data Analysis:
 Under EDA we worked on the following things like:
 (i)-Extracting important variables and leaving behind useless variables
 (ii)-Identifying outliers, missing values, or human error
@@ -76,14 +85,16 @@ The Agriculture.csv dataset:
 A few graphical EDA performed on the dataset:
 ![image](https://user-images.githubusercontent.com/60257466/113517278-8d1f2f00-959c-11eb-8849-ececd449364b.png)
 
-10.1 Data Partitioning
+11.1 Data Partitioning
 As the dataset was huge, we decided to partition the dataset into 3 – train, validation and test. 2016-2018 data was considered as train data. 2019 as validation data and 2020 as test data.
-11.1 Model Building
+
+12.1 Model Building
 As the business objective is to perform a real time price discovery, it was decided to build an LSTM model as it would keep into account the previous historical data as well while predicting.
 The date column would not be needed in this case, so it was ignored.
 The Crop and AMC columns were categorical data so Label Encoding was done for these 2 columns to convert it into numerical data. After that, these 2 columns of data along with the Minimum and Maximum values were used as the input features for the LSTM model with the Model value as the target variable.
 Model was built with 2 LSTM hidden layers – one with 20 neurons and the next with 15 neurons.
-12.1 Accuracy of the model
+
+13.1 Accuracy of the model
 The built model showed an accuracy of 97% on the train data and 93% on validation data.
 Train data graph:
 
@@ -98,7 +109,7 @@ Test Data graph:
 
 ![image](https://user-images.githubusercontent.com/60257466/113517459-b2f90380-959d-11eb-9556-9c4a0b63968b.png)
 
-13.1 The Interactive Dashboard
+14.1 The Interactive Dashboard
 There are six different dashboards created using Tableau with the below content:
 (i)Forecasting visualization on minimum, maximum and modal price of different crops with their production volumes in quintals.
 
