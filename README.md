@@ -109,7 +109,13 @@ Test Data graph:
 
 ![image](https://user-images.githubusercontent.com/60257466/113517459-b2f90380-959d-11eb-9556-9c4a0b63968b.png)
 
-14.1 The Interactive Dashboard
+14.1  The Android Application:
+Working Interface: User has to choose the "AMC Name" and "Crop" in the drop down menus along with giving the maximum and minimum prices as an input in order to predict the price. This will help the harvesters to track the predicted amount market wise and commodity wise. This app was built using a web application integrated development environment originally provided by Google called "MIT App Inventor".
+The view of the application: 
+
+![image](https://user-images.githubusercontent.com/60257466/113598538-e51c6b00-965a-11eb-9f1a-b843e66732f9.png)
+
+15.1 The Interactive Dashboard
 There are six different dashboards created using Tableau with the below content:
 (i)Forecasting visualization on minimum, maximum and modal price of different crops with their production volumes in quintals.
 
@@ -136,3 +142,5 @@ b) Forecasting of Groundnut pods wet and Maize Common with their prices
 c) Forecasting of Maize Hybrid New and Maize Hybrid Old
 
 ![image](https://user-images.githubusercontent.com/60257466/113517586-6feb6000-959e-11eb-8d82-bb8fab53c533.png)
+
+
