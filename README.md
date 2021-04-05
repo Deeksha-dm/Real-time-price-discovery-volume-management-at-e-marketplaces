@@ -25,13 +25,13 @@ Data related to Market prices collected from the Telangana Govt website for the 
 Link Courtesy: http://tsmarketing.in/AMCwiseStaffParticulars.aspx
 
 5.1 The Database:
-We have made a connection to MySQL Database in Python such that it can capture the data stored in the database. 
+We have made a connection to MySQL Database in Python such that it can capture the data stored in the database.
 The steps included were as follows:
 a) Install MySQL connector module
 b) Use the pip command to install MySQL connector Python.
 c) pip install mysql-connector-python
 d) Import MySQL connector module
-e) Import using a import mysql.connector statement so you can use this module’s methods to communicate with the MySQL database.
+e) Import using an import mysql.connector statement so you can use this module’s methods to communicate with the MySQL database.
 f) Use the connect() method of the MySQL Connector class with the required arguments to connect MySQL. It would return a MySQLConnection object if the connection established successfully, Use the cursor() method, Use the cursor() method of a MySQLConnection object to create a cursor object to perform various SQL operations. Use the execute() method,
 The execute() methods run the SQL query and return the result.Extract result using fetchall(), Use cursor.fetchall() or fetchone() or fetchmany() to read query result. Close cursor and connection objects, use cursor.clsoe() and connection.clsoe() method to close open connections after your work completes
 
@@ -63,13 +63,13 @@ View of the dataset in Tabular form:
 
 9.1 Data Pre-Processing:
 (i) NA Values
-The dataset was checked for any NA values. There were totally 28 rows with NA values. As the total number of rows was around 20000, it was decided to remove the rows with NA values as it would not impact the model building.
+The dataset was checked for any NA values. There were totally of 28 rows with NA values. As the total number of rows was around 20000, it was decided to remove the rows with NA values as it would not impact the model building.
 (ii) Outliers Treatment
-Box-plots were plotted for the Minimum, Maximum and Model values.
-Outliers were detected in the box plot. There were totally 15 outliers. On analyzing it was observed that these were due to incorrect data entry. So, they were removed from the dataset.
+Box plots were plotted for the Minimum, Maximum and Model values.
+Outliers were detected in the box plot. There were totally of 15 outliers. On analyzing it was observed that these were due to incorrect data entry. So, they were removed from the dataset.
 
 10.1 Exploratory Data Analysis:
-Under EDA we worked on the following things like:
+Under EDA we worked on the following things:
 (i)-Extracting important variables and leaving behind useless variables
 (ii)-Identifying outliers, missing values, or human error
 (iii)-Understanding the relationship(s), or lack of, between variables
@@ -77,7 +77,7 @@ Under EDA we worked on the following things like:
 later in the process.
 
 -->These helped us in turning an almost useable dataset into a completely useable dataset. And later it helped us in analyzing relationships between variables
-The inferences were drawn both descriptively and graphicaly using a dataset named as "Agriculture.csv".It is an extensive version of the dataset used for Model Building.
+The inferences were drawn both descriptively and graphically using a dataset named as "Agriculture.csv".It is an extensive version of the dataset used for Model Building.
 
 The Agriculture.csv dataset:
 ![image](https://user-images.githubusercontent.com/60257466/113517325-d8d1d880-959c-11eb-8c18-07d77665bae1.png)
@@ -89,10 +89,10 @@ A few graphical EDA performed on the dataset:
 As the dataset was huge, we decided to partition the dataset into 3 – train, validation and test. 2016-2018 data was considered as train data. 2019 as validation data and 2020 as test data.
 
 12.1 Model Building
-As the business objective is to perform a real time price discovery, it was decided to build an LSTM model as it would keep into account the previous historical data as well while predicting.
+As the business objective is to perform a real-time price discovery, it was decided to build an LSTM model as it would keep into account the previous historical data as well while predicting.
 The date column would not be needed in this case, so it was ignored.
-The Crop and AMC columns were categorical data so Label Encoding was done for these 2 columns to convert it into numerical data. After that, these 2 columns of data along with the Minimum and Maximum values were used as the input features for the LSTM model with the Model value as the target variable.
-Model was built with 2 LSTM hidden layers – one with 20 neurons and the next with 15 neurons.
+The Crop and AMC columns were categorical data so Label Encoding was done for these 2 columns to convert them into numerical data. After that, these 2 columns of data along with the Minimum and Maximum values were used as the input features for the LSTM model with the Model value as the target variable.
+The model was built with 2 LSTM hidden layers – one with 20 neurons and the next with 15 neurons.
 
 13.1 Accuracy of the model
 The built model showed an accuracy of 97% on the train data and 93% on validation data.
@@ -109,9 +109,9 @@ Test Data graph:
 
 ![image](https://user-images.githubusercontent.com/60257466/113517459-b2f90380-959d-11eb-9556-9c4a0b63968b.png)
 
-14.1  The Android Application:
-Working Interface: User has to choose the "AMC Name" and "Crop" in the drop down menus along with giving the maximum and minimum prices as an input in order to predict the price. This will help the harvesters to track the predicted amount market wise and commodity wise. This app was built using a web application integrated development environment originally provided by Google called "MIT App Inventor".
-The view of the application: 
+14.1 The Android Application:
+Working Interface: The user has to choose the "AMC Name" and "Crop" in the drop-down menus along with giving the maximum and minimum prices as an input in order to predict the price. This will help the harvesters to track the predicted amount market-wise and commodity wise. This app was built using a web application integrated development environment originally provided by Google called "MIT App Inventor".
+The view of the application:
 
 ![image](https://user-images.githubusercontent.com/60257466/113598538-e51c6b00-965a-11eb-9f1a-b843e66732f9.png)
 
@@ -129,7 +129,7 @@ There are six different dashboards created using Tableau with the below content:
 
 ![image](https://user-images.githubusercontent.com/60257466/113517562-43374880-959e-11eb-9ba6-1e259236cb9d.png)
 
-(iv)Forecasting of all varieties of crops with the Maximum, minimum and Modal price
+(iv)Forecasting of all varieties of crops with the maximum, minimum and Modal price
 
 a) Bengal Gram Common and Groundnut pods Common
 
@@ -142,5 +142,4 @@ b) Forecasting of Groundnut pods wet and Maize Common with their prices
 c) Forecasting of Maize Hybrid New and Maize Hybrid Old
 
 ![image](https://user-images.githubusercontent.com/60257466/113517586-6feb6000-959e-11eb-8d82-bb8fab53c533.png)
-
 
